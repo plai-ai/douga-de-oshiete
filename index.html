@@ -1,0 +1,61 @@
+<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>動画で教えて｜いち式スキル</title><style>*{box-sizing:border-box}body{margin:0;background:#fff9f3;color:#26362e;font:16px/1.9 system-ui,sans-serif}main{max-width:960px;margin:auto;padding:42px 24px}h1{font-size:clamp(28px,5vw,44px);line-height:1.4}h2{line-height:1.5}.eyebrow{color:#b84d36;font-weight:700}.panel{background:#fff;border:1px solid #e3d6c6;border-radius:20px;margin:26px 0;padding:28px}.buttons{display:flex;flex-wrap:wrap;gap:12px}.button,button{border:0;background:#28724d;color:white;padding:13px 19px;border-radius:9px;text-decoration:none;font:inherit;cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:20px;background:#f5f5ef;font:14px/1.8 system-ui;border-radius:10px}video{width:100%;border-radius:12px;background:#e8e5da}small{color:#68766c}details{margin:15px 0}summary{cursor:pointer;font-weight:bold}@media(max-width:600px){main{padding:26px 16px}.panel{padding:19px}} </style><main><span class="eyebrow">AI超人のいち / YouTube特典</span><h1>読めない資料を、<br>自分向けの解説動画に。</h1><p>いち式「動画で教えて」スキル。見る人と決めたいことに合わせて、説明の原稿・AIのおすすめ・NotebookLMの指示文をまとめます。</p><p>スキルが作るのは動画の材料です。動画は、その材料をNotebookLMに貼って生成します。実際に作った8分19秒の見本も入っています。</p><div class="buttons"><a class="button" href="#install">スキルを使う</a><a class="button" href="https://codeload.github.com/plai-ai/douga-de-oshiete/zip/refs/heads/main">一式をZIPで保存</a></div><section class="panel"><h2>まず、完成見本を見る</h2><p>架空のお店の予約サイトを題材に、専門知識のない社長が「修正を本番に出してよいか」を決める動画を作りました。</p><video controls preload="metadata" src="examples/%E8%A6%8B%E6%9C%AC%E5%8B%95%E7%94%BB_%E4%BA%88%E7%B4%84%E3%82%B5%E3%82%A4%E3%83%88%E3%81%AE%E4%BF%AE%E6%AD%A3%E3%82%92%E6%9C%AC%E7%95%AA%E3%81%AB%E5%87%BA%E3%81%97%E3%81%A6%E3%82%88%E3%81%84%E3%81%8B.mp4"></video><p><a href="examples/%E8%A6%8B%E6%9C%AC%E5%8B%95%E7%94%BB_%E4%BA%88%E7%B4%84%E3%82%B5%E3%82%A4%E3%83%88%E3%81%AE%E4%BF%AE%E6%AD%A3%E3%82%92%E6%9C%AC%E7%95%AA%E3%81%AB%E5%87%BA%E3%81%97%E3%81%A6%E3%82%88%E3%81%84%E3%81%8B.mp4" download>見本動画を保存する</a> / <a href="examples/2026-10-18_%E4%BA%88%E7%B4%84%E3%82%B5%E3%82%A4%E3%83%88%E3%81%AE%E5%AE%89%E5%85%A8%E5%AF%BE%E7%AD%96%E3%82%92%E6%9C%AC%E7%95%AA%E3%81%AB%E5%87%BA%E3%81%97%E3%81%A6%E3%82%88%E3%81%84%E3%81%8B.md">この動画に使った原稿を読む</a></p><small>見本の情報と数値は架空です。日本語の解説動画、8分19秒。</small></section><section class="panel" id="install"><h2>① Claude Codeに1回だけ入れる</h2><p>Mac / Linux は、下のコマンドをターミナルで実行します。</p><pre id="mac">mkdir -p ~/.claude/skills/douga-de-oshiete &amp;&amp; curl -fsSL https://raw.githubusercontent.com/plai-ai/douga-de-oshiete/main/skills/douga-de-oshiete/SKILL.md -o ~/.claude/skills/douga-de-oshiete/SKILL.md</pre><button data-copy="mac">Mac / Linuxのコマンドをコピー</button><details><summary>Windows（PowerShell）はこちら</summary><pre id="win">New-Item -ItemType Directory -Force &quot;$HOME\.claude\skills\douga-de-oshiete&quot; | Out-Null; Invoke-WebRequest https://raw.githubusercontent.com/plai-ai/douga-de-oshiete/main/skills/douga-de-oshiete/SKILL.md -OutFile &quot;$HOME\.claude\skills\douga-de-oshiete\SKILL.md&quot;</pre><button data-copy="win">Windowsのコマンドをコピー</button></details><p>Claude Codeを開き直してから使います。</p></section><section class="panel"><h2>② 資料を作ったあと、一言頼む</h2><pre id="ask">動画で教えて。見るのはエンジニアではない社長で、この修正を本番に出してよいか決めたいです。</pre><button data-copy="ask">頼み方をコピー</button><p>見る人と決めたいことが分からない場合、AIが最初に1問だけ聞きます。答えると、原稿・おすすめと理由・指示文・確認質問ができます。</p><p>できた原稿と指示文をNotebookLMへ貼り、動画解説を生成します。混雑などで時間は変わります。</p><a href="https://notebooklm.google.com/">NotebookLMを開く</a></section><section class="panel"><h2>Claude Codeを使っていない方へ</h2><p>ChatGPT・Gemini・Claudeに貼る版も用意しています。秘密の値を含まない資料を選んでから使ってください。</p><details><summary>貼るだけ版を開く</summary><pre id="chat"># 動画で教えて（チャット版）— ChatGPT・Gemini・Claude に貼るだけ
+
+Claude Code を使っていない方はこちら。下の枠の中を**まるごとコピー**して、ChatGPT・Gemini・Claude のどれかに貼り、`〈 〉` の所だけ書き換えて送ってください。
+読めない資料は、この文のすぐ下に貼るか、ファイルとして添付します。
+
+&gt; ⚠ パスワード・APIキー・お客さんの名前は、貼る前に消してください。AIにも「消して」と指示していますが、最初から入れないのがいちばん安全です。
+
+---
+
+```text
+あなたは、読みにくい資料を、見る人が10分の動画で理解して判断できる形に書き直す担当です。
+これから渡す資料をもとに、Gemini Notebook（旧NotebookLM）の「動画解説」に入れる材料を3つ作ってください。
+
+【この動画を見る人】〈例：エンジニアではない社長〉
+【見たあと決めたいこと】〈例：この修正を本番に出してよいか〉
+
+■守ること
+・資料に書いてあることだけを使い、分からないことは「未確認」、推測は「（推測）」と書く
+・パスワード、APIキー、トークン、個人名、メールアドレス、電話番号、社内URLは【伏せ字：種類】に置き換える
+・中学生でも分かる言葉で、1文はなるべく60字以内。各章に身近なたとえを1つ入れる
+・全体の3〜4割を「元の問題」と「原因」に使う
+
+■作るもの1：説明の原稿（3,000〜8,000字・見出しはこの順番）
+# 題名（何が起きて、何を決めるのか）
+## この動画を見る人と、決めたいこと
+## 30秒でいうと（結論を3文。決めたいことへの答えを先に）
+## 1. 元の問題
+## 2. 原因
+## 3. やったこと（番号つきの手順）
+## 4. その方法を選んだ理由（ほかの案2つ程度と比べて）
+## 5. これからの運用（誰が・いつ・何を）
+## 6. 注意点とリスク（セキュリティ・お金・元に戻せるか、を必ず）
+## 7. 同じ失敗を防ぐ方法
+## 8. おすすめ（AIの意見）：「私ならこうします」＋理由3つ＋判断が変わる条件
+## 用語集（用語ごとに1〜2行・たとえ話で）
+
+■作るもの2：動画解説の「重視するポイント」欄に貼る文（300字以内）
+次の文の〈 〉を埋め、誤解されやすい点があれば「〜とは言わないでください」を最大3つ足す。
+「日本語で、〈見る人〉が〈決めたいこと〉を判断できるように説明してください。原稿の本文を正しい情報として扱い、原稿にない推測は足さないでください。元の問題と原因から順に説明し、最後にAIのおすすめと、その判断が変わる条件を伝えてください。専門用語は、使うたびに短く言い換えてください。長さは7〜9分を目安にしてください。」
+
+■作るもの3：承認前の確認質問を5つ
+見る人が自分の言葉で答えられれば「分かった」と言える質問を5つ。決めたいことに直結するものだけ。各質問に、答えが書いてある原稿の章を付ける。
+
+最後に、出す前に次を確かめてから出力してください：見る人と決めたいことが原稿と指示の文の両方に入っている／おすすめに意見・理由3つ・条件がある／伏せ字以外の秘密の値が残っていない。
+
+▼資料
+〈ここに資料を貼る〉
+```
+
+---
+
+## できあがったら（Gemini Notebook で3分）
+
+1. https://notebook.google.com を開き、「新しいノートブック」を押す
+2. ソースの追加で「コピーしたテキスト」を選び、**作るもの1（原稿）**を貼って「挿入」
+3. 右側の「動画解説」を押して「動画解説をカスタマイズ」を開き、形式＝説明動画／ビジュアル スタイル＝ホワイトボード（おすすめ）／言語＝日本語。「この動画で重視するポイントは何ですか？」→「カスタム トピック」に**作るもの2**を貼って「生成」
+4. 10〜15分待つ（混んでいると30分以上かかることもあります）
+5. 見終わったら、同じノートのチャットに**作るもの3（確認質問）**を貼り、自分の言葉で答えられるか確かめる
+
+※仕事の資料を入れたノートでは、回答の評価ボタン（👍👎）は押さないでください。評価を送ると、そのやり取りを人が確認することがあります。
+</pre><button data-copy="chat">貼るだけ版をコピー</button></details></section><small>作成：AI超人のいち / 株式会社PLai<br>パスワード・顧客情報などは、資料をAIへ渡す前に外してください。</small><p id="status" role="status"></p></main><script>document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(document.getElementById(b.dataset.copy).textContent);document.querySelector('#status').textContent='コピーしました'}catch{document.querySelector('#status').textContent='枠の文章を選択してコピーしてください'}}))</script></html>
